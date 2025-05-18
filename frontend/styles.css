@@ -295,7 +295,6 @@
   /* Mission Section */
   .mission {
     background-color: var(--light);
-    padding: 2rem;
   }
   
   .mission-cards {
