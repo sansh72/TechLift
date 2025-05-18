@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
           phone: document.getElementById('phone').value,
           message: document.getElementById('message').value
         };
-        fetch('http://localhost:5000/submit', {
+        fetch('https://techlift-4.onrender.com/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
