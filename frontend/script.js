@@ -138,6 +138,21 @@ document.addEventListener('DOMContentLoaded', function() {
           phone: document.getElementById('phone').value,
           message: document.getElementById('message').value
         };
+        fetch('http://localhost:5000/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Thank you for your interest! We will contact you shortly.');
+            contactForm.reset();
+          } else {
+            alert('There was a problem submitting your request.');
+          }
+        });
         
         // In a real application, you would send this data to a server
         console.log('Form submitted with data:', formData);
@@ -149,6 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.reset();
       });
     }
+    
   
     // Newsletter form
     const newsletterForm = document.getElementById('newsletter-form');
